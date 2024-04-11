@@ -1,41 +1,56 @@
 package questao2;
 
+import java.util.List;
+
 public class SelectMinMax {
-    public static void main(String[] args) {
 
-        int[] array = new int[10000];
-        for(int i =0; i<array.length; i++){
-            array[i] = (int) (Math.random() * array.length);
-        }
+//    public List<Generic> selectSort(List<Generic> array) {
+//        for (int i = 0; i < array.size()/2; i++) {
+//            int posMenor = i;
+//            int posMaior = array.size() - (i + 1);
+//            for (int j = i; j < array.size() - i; j++) {
+//                if (array[j] < array[posMenor]) {
+//                    posMenor = j;
+//                } else if (array[j] > array[posMaior]) {
+//                    posMaior = j;
+//                }
+//            }
+//            int min = array[posMenor];
+//            array[posMenor] = array[i];
+//            array[i] = min;
+//
+//            int max = array[posMaior];
+//            array[posMaior] = array[array.length - (i + 1)];
+//            array[array.length - (i + 1)] = max;
+//        }
+//    }
 
-        System.out.println("Vetor não ordenado: ");
-        for(int i =0; i<array.length; i++){
-            System.out.print(array[i] + " -> ");
-        }
-
-        for(int i=0; i<array.length/2; i++){
+    public List<Generic> selectSort(List<Generic> array) {
+        for (int i = 0; i < array.size() / 2; i++) {
             int posMenor = i;
-            int posMaior = array.length-(i+1);
-            for(int j=i; j<array.length-i; j++){
-                if(array[j] < array[posMenor]){
+            int posMaior = i;
+            for (int j = i+1; j < array.size() - i; j++) {
+                if (array.get(j).compareTo(array.get(posMenor)) < 0) {
                     posMenor = j;
-                }
-                else if(array[j] > array[posMaior]){
+                } else if (array.get(j).compareTo(array.get(posMaior)) > 0) {
                     posMaior = j;
                 }
             }
-            int min = array[posMenor];
-            array[posMenor] = array[i];
-            array[i] = min;
 
-            int max = array[posMaior];
-            array[posMaior] = array[array.length-(i+1)];
-            array[array.length-(i+1)] = max;
+            Generic min = array.get(posMenor);
+            array.set(posMenor, array.get(i));
+            array.set(i, min);
+
+            // Se o menor estiver na posição posMaior, atualiza posMaior
+            if (posMaior == i) {
+                posMaior = posMenor;
+            }
+
+            Generic max = array.get(posMaior);
+            array.set(posMaior, array.get(array.size() - (i + 1)));
+            array.set(array.size() - (i + 1), max);
         }
-        
-        System.out.println("\nVetor ordenado: ");
-        for(int i =0; i<array.length; i++){
-            System.out.print(array[i] + " -> ");
-        }
+        return array;
     }
+
 }
