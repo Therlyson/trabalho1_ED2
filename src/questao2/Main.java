@@ -1,5 +1,8 @@
 package questao2;
 
+import classesGerais.CriaVetor;
+import classesGerais.Generic;
+
 import java.util.List;
 import java.util.Scanner;
 

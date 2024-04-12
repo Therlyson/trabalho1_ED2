@@ -10,6 +10,9 @@ public class Main {
         for(int i =0; i<array.length; i++){
             array[i] = (int) (Math.random() * array.length);
         }
+
+
+
         System.out.println("desordenado: ");
         for(int i =0; i<array.length; i++){
             System.out.print(array[i] + " ");

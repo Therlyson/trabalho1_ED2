@@ -1,29 +1,10 @@
 package questao2;
 
+import classesGerais.Generic;
+
 import java.util.List;
 
 public class SelectMinMax {
-
-//    public List<Generic> selectSort(List<Generic> array) {
-//        for (int i = 0; i < array.size()/2; i++) {
-//            int posMenor = i;
-//            int posMaior = array.size() - (i + 1);
-//            for (int j = i; j < array.size() - i; j++) {
-//                if (array[j] < array[posMenor]) {
-//                    posMenor = j;
-//                } else if (array[j] > array[posMaior]) {
-//                    posMaior = j;
-//                }
-//            }
-//            int min = array[posMenor];
-//            array[posMenor] = array[i];
-//            array[i] = min;
-//
-//            int max = array[posMaior];
-//            array[posMaior] = array[array.length - (i + 1)];
-//            array[array.length - (i + 1)] = max;
-//        }
-//    }
 
     public List<Generic> selectSort(List<Generic> array) {
 

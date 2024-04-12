@@ -1,4 +1,6 @@
-package questao2;
+package classesGerais;
+
+import classesGerais.Generic;
 
 import java.util.ArrayList;
 import java.util.List;
