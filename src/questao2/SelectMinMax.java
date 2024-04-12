@@ -26,6 +26,7 @@ public class SelectMinMax {
 //    }
 
     public List<Generic> selectSort(List<Generic> array) {
+
         for (int i = 0; i < array.size() / 2; i++) {
             int posMenor = i;
             int posMaior = i;

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    //2 5 0 6 2 0 5
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
