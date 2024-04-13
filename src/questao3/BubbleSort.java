@@ -1,16 +1,20 @@
 package questao3;
 
+import classesGerais.Generic;
+
+import java.util.List;
+
 public class BubbleSort {
 
 
-    public void ordenar(int[] array, int left, int right){
-        int aux;
+    public void ordenar(List<Generic> array, int left, int right){
+        Generic aux;
         for(int i = left; i<right; i++){
             for(int j = i+1; j <= right; j++){
-                if(array[i] > array[j]){
-                    aux = array[j];
-                    array[j] = array[i];
-                    array[i] = aux;
+                if(array.get(i).compareTo(array.get(j)) > 0){
+                    aux = array.get(j);
+                    array.set(j, array.get(i));
+                    array.set(i, aux);
                 }
             }
         }
