@@ -6,11 +6,11 @@ import java.util.List;
 
 public class MergeInsert {
     private final int MOMENTO_INSERT = 20;
-
+    InsertSort insertSort = new InsertSort();
     public void mergeSort(List<Generic> vetor, List<Generic> auxiliar, int inicio, int fim){
         if(inicio < fim){
             if((fim-inicio) < MOMENTO_INSERT){  //caso base o vetor tem 3 vetores
-                insertSort(vetor, inicio, fim);
+                insertSort.ordenar(vetor, inicio, fim);
                 return;
             }
             int meio = (inicio+fim)/2;
@@ -50,17 +50,17 @@ public class MergeInsert {
 
     // 1, 5, 14, 5, 7 ---> 1, 5, 7, 5, 7 ---> 1, 5, 7, 12, 7 ---> 1, 5, 7, 12, 14
 
-    private void insertSort(List<Generic> array, int inicio, int fim){
-        Generic aux2;
-        int j;
-        for(int i=inicio+1; i<=fim; i++){
-            aux2 = array.get(i);
-            j = i-1;
-            while(j>=inicio && array.get(j).compareTo(aux2) > 0){  //j >= inicio e não j>=0
-                array.set(j+1, array.get(j));
-                j--;
-            }
-            array.set(j+1, aux2);
-        }
-    }
+//    private void insertSort(List<Generic> array, int inicio, int fim){
+//        Generic aux2;
+//        int j;
+//        for(int i=inicio+1; i<=fim; i++){
+//            aux2 = array.get(i);
+//            j = i-1;
+//            while(j>=inicio && array.get(j).compareTo(aux2) > 0){  //j >= inicio e não j>=0
+//                array.set(j+1, array.get(j));
+//                j--;
+//            }
+//            array.set(j+1, aux2);
+//        }
+//    }
 }
