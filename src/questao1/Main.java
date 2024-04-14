@@ -21,19 +21,24 @@ public class Main {
         CriaVetor vetor = new CriaVetor();
         List<Generic> vetorCriado = vetor.criar(tamanho, opcao);
 
-        System.out.println("\nVetor não ordenado: ");
-        for(Generic v: vetorCriado){
-            System.out.print(v.getValue() + " ");
-        }
+       System.out.println("\nVetor não ordenado: ");
+       for(Generic v: vetorCriado){
+           System.out.print(v.getValue() + " ");
+       }
 
         List<Generic> auxiliar = new ArrayList<>(Collections.nCopies(vetorCriado.size(), null));
 
         MergeInsert mergeInsert = new MergeInsert();
+        long startTime = System.currentTimeMillis();
         mergeInsert.mergeSort(vetorCriado, auxiliar, 0, vetorCriado.size()-1);
+        long endTime = System.currentTimeMillis();
 
         System.out.println("\nVetor ordenado: ");
         for(Generic v: vetorCriado){
             System.out.print(v.getValue() + " ");
         }
+        System.out.println();
+        long temp = endTime-startTime;
+        System.out.println("Tempo de execução em milissegundos: " + temp);
     }
 }
