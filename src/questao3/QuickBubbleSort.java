@@ -14,6 +14,7 @@ public class QuickBubbleSort {
                 bubbleSort.ordenar(arr, left, right);
                 return;
             }
+            arr.remove(arr.get(0));
 
             int pivo = partition(arr, left, right); // Esse pivo retorna o indice que o pivo deve ocupar na lista (nesse caso, mediana de 3)
             quicksort(arr, left, pivo - 1); // Agora o right (ultimo elemento desse arr), vai ser o elemento que vem antes do pivo.
