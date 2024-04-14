@@ -1,6 +1,7 @@
-package questao1;
+package questao1.model;
 
-import classesGerais.Generic;
+import questao1.model.InsertSort;
+import utils.Generic;
 
 import java.util.List;
 

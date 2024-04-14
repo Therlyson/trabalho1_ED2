@@ -1,4 +1,4 @@
-package classesGerais;
+package utils;
 
 public class Generic<T extends Comparable<T>> implements Comparable<Generic<T>> {
     private T value;

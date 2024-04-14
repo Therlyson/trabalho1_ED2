@@ -1,6 +1,6 @@
-package questao3;
+package questao3.model;
 
-import classesGerais.Generic;
+import utils.Generic;
 
 import java.util.List;
 

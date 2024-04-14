@@ -1,11 +1,9 @@
-package classesGerais;
-
-import classesGerais.Generic;
+package utils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-public class CriaVetor {
+public class Vetor {
 
     public List<Generic> criar(int tam, int tipo){
         Random random = new Random();
@@ -44,4 +42,17 @@ public class CriaVetor {
         }
         return sb.toString();
     }
+
+    public List<Generic> copiarVetor(List<Generic> vetor) {
+        List<Generic> copia = new ArrayList<>();
+
+        for (Generic elemento : vetor) {
+            // Cria uma cópia do elemento e adiciona à lista de cópias
+            copia.add(new Generic<>(elemento.getValue()));
+        }
+
+        return copia;
+    }
+
+
 }

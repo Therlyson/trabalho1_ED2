@@ -1,6 +1,7 @@
-package questao3;
+package questao3.model;
 
-import classesGerais.Generic;
+import questao3.model.BubbleSort;
+import utils.Generic;
 
 import java.util.Collections;
 import java.util.List;

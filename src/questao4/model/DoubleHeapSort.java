@@ -1,6 +1,6 @@
-package questao4;
+package questao4.model;
 
-import classesGerais.Generic;
+import utils.Generic;
 
 import java.util.ArrayList;
 import java.util.Collections;
