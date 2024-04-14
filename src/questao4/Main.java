@@ -8,39 +8,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        int[] array = new int[100000];
-//        for(int i =0; i<array.length; i++){
-//            array[i] = (int) (Math.random() * array.length);
-//        }
-//
-////        System.out.println("Não ordenado: ");
-////        for(int i =0; i<array.length; i++){
-////            System.out.print(array[i] + " ");
-////        }
-//
-//        DoubleHeapSort doubleHeapSort = new DoubleHeapSort();
-//        long startTime = System.currentTimeMillis();
-//        doubleHeapSort.heapSort(array);
-//        long endTime = System.currentTimeMillis();
-//        long temp = endTime-startTime;
-//
-////        System.out.println("\n\n\n");
-////        System.out.println("\nOrdenado: ");
-////        for(int i =0; i<array.length; i++){
-////            System.out.print(array[i] + " ");
-////        }
-//
-//        System.out.println();
-//        System.out.println();
-//        System.out.println(temp);
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Qual o tamanho do vetor que você deseja ordenar: ");
         int tamanho = scanner.nextInt();
+
         System.out.print("\n1 - inteiro\n2 - String\n3 - double\n" +
                 "Digite a opção do tipo de vetor que deseja ordenar: ");
         int opcao = scanner.nextInt();
+
+        System.out.print("\n0 - Desejo utilizar threads no doubleHeapSort\n1 - Sem threads\nDigite sua opção: ");
+        int op = scanner.nextInt();
 
         CriaVetor vetor = new CriaVetor();
         List<Generic> vetorCriado = vetor.criar(tamanho, opcao);
@@ -49,8 +27,22 @@ public class Main {
             System.out.print(v.getValue() + " ");
         }
 
-        DoubleHeapSort heap = new DoubleHeapSort();
-        heap.heapSort(vetorCriado);
+        if(op == 0){
+            HeapThread doubleHeap = new HeapThread();
+            long inicio = System.currentTimeMillis();
+            doubleHeap.doubleHeapSort(vetorCriado);
+            long fim = System.currentTimeMillis();
+            long temp = fim - inicio;
+            //System.out.println(temp);
+        }else{
+            DoubleHeapSort doubleHeap = new DoubleHeapSort();
+            long inicio = System.currentTimeMillis();
+            doubleHeap.heapSort(vetorCriado);
+            long fim = System.currentTimeMillis();
+            long temp = fim - inicio;
+           // System.out.println(temp);
+        }
+
         System.out.println("\nVetor ordenado: ");
         for(Generic v: vetorCriado){
             System.out.print(v.getValue() + " ");
