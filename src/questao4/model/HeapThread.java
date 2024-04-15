@@ -16,13 +16,14 @@ public class HeapThread{
 
         int n = array.size();
 
-        Thread minHeapThread = new Thread(() -> buildMinHeap(minHeap, n));
-        Thread maxHeapThread = new Thread(() -> buildMaxHeap(maxHeap, n));
+        Thread minHeapThread = new Thread(() -> buildMinHeap(minHeap, n)); // Thread para construir o min-heap
+        Thread maxHeapThread = new Thread(() -> buildMaxHeap(maxHeap, n)); // Thread para construir o max-heap
 
         minHeapThread.start();
         maxHeapThread.start();
 
         try {
+            // Aguardar término da thread do min-heap e max-heap
             minHeapThread.join();
             maxHeapThread.join();
         } catch (InterruptedException e) {
@@ -32,12 +33,13 @@ public class HeapThread{
         doubleOrganizeArray(array, maxHeap, minHeap);
     }
 
+    // Método para construir o max-heap, começando da posição raiz em que os filhos sáo os últimos no vetor
     private void buildMaxHeap(List<Generic> array, int size) {
         for (int i = size / 2 - 1; i >= 0; i--) {
             heap.maxHeapify(array, i, size);
         }
     }
-
+    // Método para construir o min-heap
     private void buildMinHeap(List<Generic> array, int size){
         for (int i = size / 2 - 1; i >= 0; i--) {
             heap.minHeapify(array, i, size);

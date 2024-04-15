@@ -36,7 +36,7 @@ public class DoubleHeapController {
         doubleHeapSort.heapSort(vetor);
         long fim = System.currentTimeMillis();
         tempo = fim - inicio;
-        return tempo;
+        return tempo; //tempo em milissegundos para ordenar o vetor
     }
 
     public long ordenarComThread(){

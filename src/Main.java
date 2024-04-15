@@ -80,7 +80,7 @@ public class Main {
                     for (Generic v : doubleHeapController.getVetor())
                         System.out.println(v.getValue() + " ");
                 }
-                System.out.println("\nTempo de execução em milissegundos: " + doubleHeapController.getTempo());
+                System.out.println("\n\nTempo de execução em milissegundos: " + doubleHeapController.getTempo());
                 break;
             default:
                 System.out.println("Opção de algoritmo inválida.");
